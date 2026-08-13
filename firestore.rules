@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /crossword_scores/{scoreId} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasAll(['name', 'email', 'correctCount', 'totalWords', 'percentage', 'timeSeconds'])
+                    && request.resource.data.name is string
+                    && request.resource.data.name.size() > 0
+                    && request.resource.data.name.size() < 100
+                    && request.resource.data.email is string
+                    && request.resource.data.email.size() > 0
+                    && request.resource.data.email.size() < 200
+                    && request.resource.data.correctCount is int
+                    && request.resource.data.totalWords is int
+                    && request.resource.data.percentage is number
+                    && request.resource.data.timeSeconds is number;
+      allow update, delete: if false;
+    }
+  }
+}
