@@ -376,7 +376,12 @@
 
   document.getElementById("btn-check").addEventListener("click", checkAnswers);
   document.getElementById("btn-submit").addEventListener("click", () => {
-    if (confirm("Submit your final score? You won't be able to keep editing after this.")) {
+    const solved = updateProgress();
+    const msg =
+      solved === 0
+        ? "Submit with 0 clues solved? That's okay — you can submit at any point, even with none filled in. You won't be able to keep editing after this."
+        : `Submit your score with ${solved}/${words.length} clues solved? You won't be able to keep editing after this.`;
+    if (confirm(msg)) {
       submitGame();
     }
   });
