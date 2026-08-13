@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nations Benefits | Crossword Challenge</title>
+<meta name="description" content="Test your Nations Benefits industry knowledge with our interactive office crossword challenge." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+<link rel="icon" href="assets/logo.jpg" />
+</head>
+<body>
+<div class="bg-grid"></div>
+
+<header class="site-header">
+  <div class="brand">
+    <img src="assets/logo.jpg" alt="Nations Benefits" />
+    <div class="brand-title">Crossword Challenge<span>Nations Benefits Office Game</span></div>
+  </div>
+  <nav class="nav-links">
+    <a href="scoreboard.html" class="primary">Leaderboard</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ENTRY PANEL -->
+  <section id="panel-entry" class="panel">
+    <div class="entry-wrap">
+      <span class="eyebrow">Office Newsletter Game</span>
+      <h1 class="hero-title">Think you know Nations Benefits inside out?</h1>
+      <p class="hero-sub">Solve the crossword built from healthcare &amp; fintech terms we use every day. Enter your details to start the clock and climb the office leaderboard.</p>
+
+      <div class="card">
+        <div class="stat-strip">
+          <div class="stat-chip"><strong>14</strong><span>Clues</span></div>
+          <div class="stat-chip"><strong>8</strong><span>Across</span></div>
+          <div class="stat-chip"><strong>6</strong><span>Down</span></div>
+        </div>
+
+        <form id="entry-form" novalidate>
+          <div class="field">
+            <label for="player-name">Full name</label>
+            <input type="text" id="player-name" placeholder="Jane Doe" autocomplete="name" />
+            <div class="error-msg">Please enter your name.</div>
+          </div>
+          <div class="field">
+            <label for="player-email">Work email</label>
+            <input type="email" id="player-email" placeholder="jane.doe@nationsbenefits.com" autocomplete="email" />
+            <div class="error-msg">Please enter a valid email address.</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Start the Challenge →</button>
+        </form>
+        <p class="privacy-note">Your name and email are only used to identify your entry on the office leaderboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAME PANEL -->
+  <section id="panel-game" class="panel">
+    <div class="game-topbar">
+      <div class="player-badge">
+        <div class="player-avatar" id="player-badge-initial">JD</div>
+        <div>
+          <div class="pname" id="player-badge-name">—</div>
+          <div class="pemail" id="player-badge-email">—</div>
+        </div>
+      </div>
+      <div class="game-meta">
+        <div class="meta-pill"><strong id="timer-display">00:00</strong><span>Time</span></div>
+        <div class="meta-pill"><strong id="progress-count">0/14</strong><span>Solved</span></div>
+      </div>
+    </div>
+
+    <div class="game-layout">
+      <div class="grid-card">
+        <div id="crossword-grid"></div>
+      </div>
+      <div class="clues-card">
+        <div class="clues-section">
+          <h3>Across</h3>
+          <div id="across-clues"></div>
+        </div>
+        <div class="clues-section">
+          <h3>Down</h3>
+          <div id="down-clues"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-actions">
+      <button id="btn-check" class="btn btn-ghost">Check Answers</button>
+      <button id="btn-submit" class="btn btn-accent">Submit Final Score</button>
+    </div>
+  </section>
+
+  <!-- RESULTS PANEL -->
+  <section id="panel-results" class="panel">
+    <div class="results-wrap">
+      <span class="eyebrow">Challenge Complete</span>
+      <h1 class="hero-title">Nice work, <span id="result-name">Player</span>!</h1>
+
+      <div class="score-ring" id="score-ring" style="--pct: 0;">
+        <div class="ring-inner">
+          <strong id="result-pct">0%</strong>
+          <span>Score</span>
+        </div>
+      </div>
+
+      <div class="results-grid">
+        <div class="stat-chip"><strong id="result-correct">0/14</strong><span>Correct</span></div>
+        <div class="stat-chip"><strong id="result-time">00:00</strong><span>Time</span></div>
+        <div class="stat-chip"><strong id="result-pct-2">—</strong><span>Accuracy</span></div>
+      </div>
+
+      <div class="results-actions">
+        <button id="btn-goto-board" class="btn btn-primary">View Leaderboard →</button>
+        <button id="btn-play-again" class="btn btn-ghost">Play Again</button>
+      </div>
+      <p class="privacy-note" id="submit-status">Saving your score…</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">Nations Benefits &middot; Internal Office Game &middot; Built for the team newsletter</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/crossword-data.js"></script>
+<script src="assets/firebase-config.js"></script>
+<script type="module" src="assets/firebase.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
