@@ -9,12 +9,12 @@
 // hiding this config.
 // ---------------------------------------------------------------------------
 window.FIREBASE_CONFIG = {
-  apiKey: "REPLACE_WITH_API_KEY",
-  authDomain: "REPLACE_WITH_PROJECT.firebaseapp.com",
-  projectId: "REPLACE_WITH_PROJECT_ID",
-  storageBucket: "REPLACE_WITH_PROJECT.appspot.com",
-  messagingSenderId: "REPLACE_WITH_SENDER_ID",
-  appId: "REPLACE_WITH_APP_ID",
+  apiKey: "AIzaSyADYkWsm6jSOpi02Iyt4eA7elAsGMmLJiM",
+  authDomain: "nb-crossword.firebaseapp.com",
+  projectId: "nb-crossword",
+  storageBucket: "nb-crossword.firebasestorage.app",
+  messagingSenderId: "1061232131764",
+  appId: "1:1061232131764:web:09d9b5d2c61e1cb41061e1",
 };
 
 // Firestore collection name used for score submissions.
